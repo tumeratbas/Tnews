@@ -1,4 +1,3 @@
-// Popular.jsx
 import React, { useState, useEffect } from "react";
 import "./Popular.css";
 import Slider from "react-slick";
@@ -12,7 +11,6 @@ const Popular = () => {
   useEffect(() => {
     const fetchPopularNews = async () => {
       try {
-        // News API'den veri çekmek için API anahtarınızı kullanın
         const apiKey = "6dd3d32a478b44888aab4122409e13d0";
         const response = await fetch(
           `https://newsapi.org/v2/top-headlines?country=tr&category=general&apiKey=${apiKey}&pageSize=8`
@@ -63,7 +61,8 @@ const Popular = () => {
                       <img src={newsItem.urlToImage} alt={newsItem.title} />
                     </div>
                     <div className="category category1">
-                      <span>{newsItem.category}</span>
+                      {/* Başlığı kategori olarak kullanma */}
+                      <span>{newsItem.title}</span>
                     </div>
                   </div>
                   <div className="text row">
@@ -74,7 +73,8 @@ const Popular = () => {
                     </div>
                     <div className="comment">
                       <i className="fas fa-comments"></i>
-                      <label>{newsItem.comments}</label>
+                      {/* Yorum sayısı varsa kullan, yoksa varsayılan olarak 0 kabul et */}
+                      <label>{newsItem.comments !== undefined ? newsItem.comments : 0}</label>
                     </div>
                   </div>
                 </div>

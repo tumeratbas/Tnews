@@ -1,0 +1,39 @@
+.Sport .box {
+    display: flex;
+    position: relative;
+    margin: 15px 15px 15px 0;
+}
+
+.Sport .logo{
+    opacity: 80%;
+    display:flex;
+}
+  .baslik{
+      text-align: center;
+      padding: 20px;
+      color: red;
+  }
+  .Sport .images {
+    position: relative;
+    height: 150px;
+  }
+  .Sport img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  .Sport .text h1 {
+    padding: 20px 0 0 20px;
+    margin: 0;
+  }
+  .Sport .date {
+    margin-top: 15px;
+    padding: 0 0 0 20px;
+  }
+  
+  .Sport .comment {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 5px 0 0 20px;
+    margin-top: 5px;
+  }
+  

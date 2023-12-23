@@ -10,7 +10,6 @@ const Ppost = () => {
   useEffect(() => {
     const fetchPpostNews = async () => {
       try {
-        // News API'den veri çekmek için API anahtarınızı kullanın
         const apiKey = "6dd3d32a478b44888aab4122409e13d0";
         const response = await fetch(
           `https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=${apiKey}&pageSize=2`

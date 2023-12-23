@@ -9,6 +9,9 @@ header {
   background-color: #d11c1c;
   color: #fff;
 }
+header :hover{
+  color:black
+}
 header li {
   margin-right: auto;
   transition: 0.5s;

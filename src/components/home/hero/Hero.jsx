@@ -14,7 +14,7 @@ const Hero = () => {
 
         const data = await response.json();
 
-        // Resim URL'si olan haberleri filtrele
+        // resim URL'si olan haberleri filtreler
         const newsWithImages = data.articles.filter((item) => item.urlToImage);
 
         setItems(newsWithImages);

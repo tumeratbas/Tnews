@@ -15,7 +15,6 @@ const Footer = () => {
           </div>
           <div className='box'>
             <h3>LABELS</h3>
-            {/*<i className='fa fa-chevron-right'></i>*/}
             <ul>
               <li>
                 <span>Boxing</span> <label>(5)</label>

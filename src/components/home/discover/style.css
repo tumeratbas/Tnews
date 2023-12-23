@@ -24,6 +24,9 @@
   text-transform: uppercase;
   margin: 0;
 }
+.discover .box:hover{
+  color:red;
+}
 @media screen and (max-width: 768px) {
   .discover .content {
     grid-template-columns: repeat(3, 1fr);
