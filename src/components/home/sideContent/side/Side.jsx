@@ -28,7 +28,7 @@ const Side = () => {
       <section className='subscribe'>
         <h1 className='title'>Hikayelerimize Abone Olun</h1>
         <form action=''>
-          <input type='email' placeholder='Mail Adresi.' />
+          <input type='email' placeholder='Mail Adresiniz...' />
           <button>
             <i className='fa fa-paper-plane'></i> KAYIT
           </button>
@@ -41,8 +41,7 @@ const Side = () => {
 
 
       <section className='catgorys'>
-        <Heading title='Catgeorys' />
-        {/*<div className='items'>{allCat}</div>*/}
+        <Heading title='Kategoriler' />
         {catgeory.map((val) => {
           return (
             <div className='category category1'>

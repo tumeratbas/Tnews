@@ -14,19 +14,19 @@ const Footer = () => {
             <span> +90 1234556678</span>
           </div>
           <div className='box'>
-            <h3>LABELS</h3>
+            <h3>BAŞLIKLAR</h3>
             <ul>
               <li>
-                <span>Boxing</span> <label>(5)</label>
+                <span>BOKS</span> <label>(5)</label>
               </li>
               <li>
-                <span>Fashion</span> <label>(6)</label>
+                <span>MODA</span> <label>(6)</label>
               </li>
               <li>
-                <span>Health</span> <label>(7)</label>
+                <span>SAĞLIK</span> <label>(7)</label>
               </li>
               <li>
-                <span>Nature</span> <label>(9)</label>
+                <span>DOĞA</span> <label>(9)</label>
               </li>
             </ul>
           </div>

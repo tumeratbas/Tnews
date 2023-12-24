@@ -1,0 +1,84 @@
+/* comments.css */
+
+.comment .box {
+    background-color: #fff;
+    display: flex;
+    position: relative;
+    margin: 15px 15px 15px 0;
+  }
+  
+ .Comments{
+    padding: 5px;
+ }
+  
+  .comment {
+    padding-top: 5px;
+  }
+  
+  textarea {
+    border-radius: 15px;
+    text-align: center;
+    resize: none;
+    width: 200%;
+  }
+  
+  ::placeholder {
+    text-align: center;
+  }
+  
+  .baslik {
+    text-align: center;
+    padding: 20px;
+    color: red;
+  }
+  
+  .comment .text h1 {
+    padding: 20px 0 0 20px;
+    margin: 0;
+  }
+  
+  .comment .date {
+    margin-top: 15px;
+    padding: 0 0 0 20px;
+  }
+  
+  .comment .comment {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 5px 0 0 20px;
+    margin-top: 5px;
+  }
+  
+  .gonder {
+    padding-bottom: 20px;
+  }
+  
+  .images .img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .itemsComment {
+    border-style: double;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-color: rgb(195, 190, 190);
+    width: auto;
+    height: auto;
+    padding-left: 10px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .comment .text h1 {
+      padding: 20px 0 0 10px;
+    }
+  
+    .comment .date {
+      padding: 0 0 0 10px;
+    }
+  
+    .items {
+      padding-left: 5px;
+    }
+  }
+  

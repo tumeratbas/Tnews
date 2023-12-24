@@ -102,7 +102,7 @@ const SinglePage = () => {
           </div>
         </main>
       ) : (
-        <h1>not found</h1>
+        <h1>Bulunamadı</h1>
       )}
     </>
   )

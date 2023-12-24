@@ -1,22 +1,21 @@
 // src/components/Header.js
-
 import React, { useState } from 'react';
 import Head from './Head';
 import './header.css';
 import { Link } from 'react-router-dom';
-import SearchBar from './SearchBar';  // SearchBar'ı içe aktar
+import SearchBar from './SearchBar';
 
 const Header = () => {
   const [navbar, setNavbar] = useState(false);
 
   const handleSearch = (query) => {
     console.log('Arama yapılıyor:', query);
-    // Burada arama işlemlerini gerçekleştirebilir veya ana sayfa bileşenine iletebilirim
+    // Handle search logic here or pass the query to the parent component
   };
 
   const handleFilterChange = (filter) => {
     console.log('Filtre değişti:', filter);
-    // Burada filtreleme işlemlerini gerçekleştirebilir veya ana sayfa bileşenine iletebilirim
+    // Handle filter change logic here or pass the filter to the parent component
   };
 
   return (
@@ -43,6 +42,9 @@ const Header = () => {
               </li>
               <li>
                 <Link to='/yorum'>Yorumlar</Link>
+              </li>
+              <li>
+                <Link to='/giris'>Giriş Yap / Kayıt Ol</Link>
               </li>
               <SearchBar onSearch={handleSearch} onFilterChange={handleFilterChange} />
             </ul>

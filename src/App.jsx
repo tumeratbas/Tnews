@@ -9,6 +9,9 @@ import Culture from "./components/culture/Culture"
 import Politics from "./components/politics/Politics"
 import Funny from "./components/funnyNews/Funny"
 import Sport from "./components/sportNews/Sport"
+import NewsDetail from './components/news/NewsDetail';
+import Comments from "./components/common/comments/comments"
+
 
 
 const App = () => {
@@ -19,9 +22,10 @@ const App = () => {
         <Switch>
           <Route exact path='/' component={Homepages} />
           <Route path='/singlepage/:id' exact component={SinglePage} />
+          <Route path='/news/:id' component={NewsDetail} />
           <Route exact path='/kultur' component={Culture} />
           <Route exact path='/politika' component={Politics} />
-          <Route exact path='/yorum' component={Comment} />
+          <Route exact path='/yorum' component={Comments} />
           <Route exact path='/spor' component={Sport} />
           <Route exact path='/komik' component={Funny} />
         </Switch>
