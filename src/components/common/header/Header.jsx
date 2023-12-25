@@ -10,12 +10,10 @@ const Header = () => {
 
   const handleSearch = (query) => {
     console.log('Arama yapılıyor:', query);
-    // Handle search logic here or pass the query to the parent component
   };
 
   const handleFilterChange = (filter) => {
     console.log('Filtre değişti:', filter);
-    // Handle filter change logic here or pass the filter to the parent component
   };
 
   return (
