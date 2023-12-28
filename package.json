@@ -1,7 +1,7 @@
 {
-  "homepage": "https://tnews-nsd0lcm20-tumers-projects.vercel.app",
   "name": "news-portal",
   "version": "0.1.0",
+  "homepage": "https://tnews-black.vercel.app",
   "private": true,
   "dependencies": {
     "@clerk/clerk-react": "^4.30.2",
