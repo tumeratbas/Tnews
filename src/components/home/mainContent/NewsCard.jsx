@@ -2,6 +2,7 @@ import React from "react";
 import "./NewsCard.css";
 
 const NewsCard = ({ news }) => {
+  // props'tan haber verilerini çek
   const { title, urlToImage, publishedAt, comments } = news;
 
   return (
@@ -10,7 +11,7 @@ const NewsCard = ({ news }) => {
         <div className="img">
           <img src={urlToImage} alt={title} />
         </div>
-        {/* Kategori bilgisi için ayrı bir alan eklenebilir */}
+        {/* Kategori bilgisi için ayrı bir alan ekleyebilirim */}
       </div>
       <div className="text row">
         <h1 className="title">{title.slice(0, 40)}...</h1>

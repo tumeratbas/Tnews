@@ -1,0 +1,14 @@
+h2{
+    text-align: center;
+    margin: 10px;
+    padding-bottom: 20px;
+}
+ .genel{
+    border: 2px solid;
+    border-color: grey;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    
+}

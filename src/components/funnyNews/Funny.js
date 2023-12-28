@@ -5,8 +5,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Funny = () => {
+  // Eğlenceli haberleri tutacak state
   const [funnyNews, setFunnyNews] = useState([]);
 
+  // Sayfa yüklendiğinde eğlenceli haberleri çeken useEffect hook'u
   useEffect(() => {
     const fetchFunnyNews = async () => {
       try {
@@ -16,15 +18,18 @@ const Funny = () => {
         );
 
         const data = await response.json();
+        // Çekilen haberleri state'e set etme
         setFunnyNews(data.articles);
       } catch (error) {
         console.error("Haberleri alırken bir hata oluştu:", error);
       }
     };
 
+    // Eğlenceli haberleri çeken fonksiyonun çağrılması
     fetchFunnyNews();
   }, []);
 
+  // React-slick için ayarlar
   const settings = {
     className: "center",
     centerMode: false,
@@ -48,20 +53,25 @@ const Funny = () => {
 
   return (
     <>
+      {/* Eğlenceli haberleri gösteren bileşen */}
       <section className="Funny">
-      <div class="baslik">
+        <div class="baslik">
+          {/* Bileşen başlığı */}
           <h1> Eğlenceli Haberler </h1>
-            </div>
+        </div>
         <div className="content">
-        <div className='logo'>
+          <div className='logo'>
+            {/* Eğlenceli haberler logosu */}
             <img src='../images/fun.png' alt='' />
           </div>
+          {/* React-slick kullanılarak eğlenceli haberleri gösteren slider */}
           <Slider {...settings}>
             {funnyNews.map((newsItem) => (
               <div className="items" key={newsItem.title}>
                 <div className="box shadow">
                   <div className="images row">
                     <div className="img">
+                      {/* Haber görseli */}
                       <img src={newsItem.urlToImage} alt={newsItem.title} />
                     </div>
                     <div className="category category1">
@@ -70,14 +80,16 @@ const Funny = () => {
                     </div>
                   </div>
                   <div className="text row">
+                    {/* Haber başlığı */}
                     <h1 className="title">{newsItem.title.slice(0, 40)}...</h1>
                     <div className="date">
+                      {/* Yayın tarihi */}
                       <i className="fas fa-calendar-days"></i>
                       <label>{newsItem.publishedAt}</label>
                     </div>
                     <div className="comment">
-                      <i className="fas fa-comments"></i>
                       {/* Yorum sayısı varsa kullan, yoksa varsayılan olarak 0 kabul et */}
+                      <i className="fas fa-comments"></i>
                       <label>{newsItem.comments !== undefined ? newsItem.comments : 0}</label>
                     </div>
                   </div>

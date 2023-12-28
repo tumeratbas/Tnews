@@ -1,14 +1,15 @@
-// Music.jsx
 import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import Heading from "../../../common/heading/Heading";
 import { Link } from "react-router-dom";
-import "./music.css";
+import "./music.css"; // Stil dosyasını içeri aktar
 
 const Music = () => {
+  // musicNews state'i, müzik haberlerini tutar
   const [musicNews, setMusicNews] = useState([]);
 
   useEffect(() => {
+    // Component mount edildiğinde çalışacak olan fonksiyon
     const fetchMusicNews = async () => {
       try {
         // News API'den veri çekmek için API anahtarınızı kullanın
@@ -29,9 +30,10 @@ const Music = () => {
       }
     };
 
-    fetchMusicNews();
+    fetchMusicNews(); // Müzik haberlerini çekme işlemini başlat
   }, []);
 
+  // Slider için ayarlar
   const settings = {
     className: "center",
     centerMode: true,
@@ -45,30 +47,41 @@ const Music = () => {
 
   return (
     <>
+      {/* Müzik haberlerini gösteren ana bileşen */}
       <section className="music">
+        {/* Başlık bileşeni */}
         <Heading title="Müzik" />
         <div className="content">
+          {/* Slider içinde müzik haberlerini gösteren bölüm */}
           <Slider {...settings}>
             {musicNews.map((newsItem) => (
               <div className="items" key={newsItem.title}>
+                {/* Haber detaylarına yönlendiren Link bileşeni */}
                 <Link to={`/news/${encodeURIComponent(newsItem.title)}`}>
+                  {/* Her bir müzik haberini gösteren kutu */}
                   <div className="box shadow flexSB">
                     <div className="images">
                       <div className="img">
+                        {/* Haber görseli */}
                         <img src={newsItem.urlToImage} alt={newsItem.title} />
                       </div>
                       <div className="category category1">
+                        {/* Kategori etiketi */}
                         <span>{newsItem.category}</span>
                       </div>
                     </div>
                     <div className="text">
+                      {/* Haber başlığı */}
                       <h1 className="title">{newsItem.title.slice(0, 40)}...</h1>
                       <div className="date">
+                        {/* Haber yayınlanma tarihi */}
                         <i className="fas fa-calendar-days"></i>
                         <label>{newsItem.publishedAt}</label>
                       </div>
+                      {/* Haber açıklaması */}
                       <p className="desc">{newsItem.description.slice(0, 250)}...</p>
                       <div className="comment">
+                        {/* Paylaşım ve yorum sayısı */}
                         <i className="fas fa-share"></i>
                         <label>Share / </label>
                         <i className="fas fa-comments"></i>

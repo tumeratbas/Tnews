@@ -1,14 +1,17 @@
-// Comments.js
-
 import React, { useState, useEffect } from "react";
 import "./comments.css";
+// React-slick kütüphanesinden Slider bileşeninin import edildiği kısım
 import Slider from "react-slick";
+// Slick Carousel stil dosyalarının import edildiği kısım
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+// Comments bileşeni, haberlere yapılan yorumları gösterir
 const Comments = () => {
+  // Haber yorumlarını tutan state'in tanımlandığı kısım
   const [commentsNews, setCommentsNews] = useState([]);
 
+  // useEffect hook'u kullanılarak sayfa yüklendiğinde haber yorumlarını çeken fonksiyon
   useEffect(() => {
     const fetchCommentsNews = async () => {
       try {
@@ -18,15 +21,19 @@ const Comments = () => {
         );
 
         const data = await response.json();
+
+        // Her bir haber öğesine commentCount özelliği eklenerek state'e set edilir
         setCommentsNews(data.articles.map((article) => ({ ...article, commentCount: 0 })));
       } catch (error) {
         console.error("Haberleri alırken bir hata oluştu:", error);
       }
     };
 
+    // Haber yorumlarını çeken fonksiyonun useEffect içinde çağrılması
     fetchCommentsNews();
   }, []);
 
+  // React-slick için ayarlar
   const settings = {
     className: "center",
     centerMode: false,
@@ -48,6 +55,7 @@ const Comments = () => {
     ],
   };
 
+  // Yorum gönderme işlemini gerçekleştiren fonksiyon
   const handleCommentSubmit = (newsItemIndex, commentText) => {
     if (commentText.trim() !== "") {
       setCommentsNews((prevNews) => {
@@ -58,14 +66,17 @@ const Comments = () => {
     }
   };
 
+  // Comments bileşeninin render edildiği kısım
   return (
     <>
+      {/* Comments bileşeni */}
       <section className="Comments">
         <div className="baslik">
           <h1> Haber Yorumlayın</h1>
         </div>
         <div className="content">
           <div className="logo">{/* Belki resim koyarım */}</div>
+          {/* React-slick kullanılarak haber yorumlarını gösteren slider */}
           <Slider {...settings}>
             {commentsNews.map((newsItem, index) => (
               <div className="itemsComment" key={newsItem.title}>
@@ -86,7 +97,9 @@ const Comments = () => {
                     </div>
                     <div className="comment">
                       <i className="fas fa-comments"></i>
+                      {/* Yorum sayısını gösteren kısım */}
                       <label>{newsItem.commentCount !== undefined ? newsItem.commentCount : 0}</label>
+                      {/* Yorum yapma alanı */}
                       <div className="commentfield">
                         <textarea
                           id={`yorum-${index}`}
@@ -95,6 +108,7 @@ const Comments = () => {
                           cols={100}
                           placeholder="Yorumunuzu yazınız..."
                         ></textarea>
+                        {/* Yorum gönderme butonu */}
                         <div className="gonder">
                           <button
                             onClick={() => handleCommentSubmit(index, document.getElementById(`yorum-${index}`).value)}
